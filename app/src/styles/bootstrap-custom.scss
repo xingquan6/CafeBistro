@@ -1,0 +1,61 @@
+// Bootstrap's own CSS is unlayered by default, which would make it beat
+// Tailwind's utility classes regardless of specificity or import order
+// (per the CSS cascade layers spec). Wrapping it in @layer keeps Tailwind
+// utilities able to override it wherever both frameworks touch the same
+// element.
+@layer bootstrap-lib {
+  @import "bootstrap/scss/functions";
+  @import "bootstrap/scss/variables";
+  @import "bootstrap/scss/variables-dark";
+
+  $espresso: #2c1a12;
+  $rust: #b5482f;
+  $rust-light: #d1613f;
+  $cream: #f7efe2;
+  $gold: #c69214;
+
+  $primary: $rust;
+  $secondary: $espresso;
+  $theme-colors: map-merge(
+    $theme-colors,
+    (
+      "primary": $rust,
+      "espresso": $espresso,
+      "light": $cream,
+    )
+  );
+
+  $font-family-sans-serif: "Inter", "Segoe UI", sans-serif;
+  $body-color: $espresso;
+  $body-bg: $cream;
+  $link-color: $rust;
+  $link-hover-color: $rust-light;
+
+  $btn-border-radius: 50rem;
+  $btn-border-radius-sm: 50rem;
+  $btn-border-radius-lg: 50rem;
+  $btn-font-weight: 600;
+  $input-border-radius: 0.5rem;
+
+  $enable-shadows: false;
+  $enable-negative-margins: true;
+
+  @import "bootstrap/scss/maps";
+  @import "bootstrap/scss/mixins";
+  @import "bootstrap/scss/utilities";
+
+  // Intentionally skips reboot/type/images/containers/grid/tables and the
+  // component partials we don't use (card, modal, alert, etc.) — reboot in
+  // particular resets raw elements (a, headings, body) globally, which would
+  // fight Tailwind outside the specific controls this migration touches.
+  @import "bootstrap/scss/root";
+  @import "bootstrap/scss/transitions";
+  @import "bootstrap/scss/forms";
+  @import "bootstrap/scss/buttons";
+  @import "bootstrap/scss/dropdown";
+  @import "bootstrap/scss/button-group";
+  @import "bootstrap/scss/nav";
+  @import "bootstrap/scss/navbar";
+  @import "bootstrap/scss/helpers";
+  @import "bootstrap/scss/utilities/api";
+}

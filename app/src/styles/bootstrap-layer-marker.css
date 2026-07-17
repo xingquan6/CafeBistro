@@ -1,0 +1,4 @@
+/* Reserves this layer's position between Tailwind's base reset and its
+   utilities layer. bootstrap-custom.scss adds the actual rules to this
+   same layer name — a layer's cascade position is fixed at first mention,
+   so it keeps this position regardless of which file contributes to it. */

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Split Tailwind's own import so bootstrap-lib can sit between its base
+   reset and its utilities: Bootstrap's component styles then win over
+   Tailwind's raw-element reset, while our own utility classes still win
+   over Bootstrap. See bootstrap-layer-marker.css / bootstrap-custom.scss. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "./styles/bootstrap-layer-marker.css" layer(bootstrap-lib);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-espresso: #2c1a12;
+  --color-espresso-light: #4a3324;
+  --color-coffee: #6b4226;
+  --color-cream: #f7efe2;
+  --color-cream-dark: #efe1c9;
+  --color-rust: #b5482f;
+  --color-rust-light: #d1613f;
+  --color-gold: #c69214;
+  --color-sage: #6f7f52;
+
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
