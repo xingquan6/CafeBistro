@@ -1,4 +1,6 @@
 import { Outlet } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 
@@ -10,6 +12,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <ToastContainer position="top-center" autoClose={4000} />
     </div>
   )
 }

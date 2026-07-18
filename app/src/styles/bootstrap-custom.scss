@@ -11,7 +11,7 @@
   $espresso: #2c1a12;
   $rust: #b5482f;
   $rust-light: #d1613f;
-  $cream: #f7efe2;
+  $cream: #e3d1b4;
   $gold: #c69214;
 
   $primary: $rust;
@@ -35,7 +35,15 @@
   $btn-border-radius-sm: 50rem;
   $btn-border-radius-lg: 50rem;
   $btn-font-weight: 600;
+
+  // $input-bg defaults to $body-bg, which would make every form field the
+  // same cream as the page background — give inputs their own white so they
+  // read as distinct fields instead of blending into the page.
+  $input-bg: #ffffff;
+  $input-border-color: rgba($espresso, 0.25);
   $input-border-radius: 0.5rem;
+  $input-focus-border-color: $rust;
+  $input-focus-box-shadow: none;
 
   $enable-shadows: false;
   $enable-negative-margins: true;
