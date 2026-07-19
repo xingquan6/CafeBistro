@@ -12,7 +12,6 @@ export function Navbar() {
   const LINKS = [
     { to: '/', label: t.nav.home },
     { to: '/menu', label: t.nav.menu },
-    { to: '/recipes', label: t.nav.recipes },
     { to: '/about', label: t.nav.about },
     { to: '/contact', label: t.nav.contact },
   ]

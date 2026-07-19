@@ -1,10 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
+
+const ROTATE_INTERVAL_MS = 5000
 
 export function QuoteBanner() {
   const { t } = useLanguage()
-  const [index] = useState(() => Math.floor(Math.random() * t.quotes.length))
-  const quote = t.quotes[index]
+  const [index, setIndex] = useState(() => Math.floor(Math.random() * t.quotes.length))
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((current) => (current + 1) % t.quotes.length)
+    }, ROTATE_INTERVAL_MS)
+    return () => clearInterval(timer)
+  }, [t.quotes.length])
+
+  const quote = t.quotes[index % t.quotes.length]
 
   return (
     <section className="bg-cream-dark">

@@ -2,13 +2,12 @@ import type { Translations } from './en'
 
 export const fr = {
   meta: {
-    title: 'Café Bistro | Café en petits lots et cuisine bistro',
-    description: 'Café Bistro — café torréfié en petits lots et bouchées maison, préparés chaque jour.',
+    title: 'Café Bistro',
+    description: 'Café Bistro',
   },
   nav: {
     home: 'Accueil',
-    menu: 'Menu',
-    recipes: 'Recettes',
+    menu: 'Boissons',
     about: 'À propos',
     contact: 'Contact',
     toggleMenu: 'Afficher le menu',
@@ -20,57 +19,23 @@ export const fr = {
     rights: (year: number, name: string) => `© ${year} ${name}. Tous droits réservés.`,
   },
   buttons: {
-    viewMenu: 'Voir le menu',
-    seeFullMenu: 'Voir tout le menu',
-    seeAllRecipes: 'Voir toutes les recettes',
-    backToRecipes: '← Retour aux recettes',
-    backToRecipesPlain: 'Retour aux recettes',
+    seeFullMenu: 'Voir toutes les boissons',
     sendMessage: 'Envoyer le message',
   },
   business: {
-    tagline: 'Café en petits lots et bouchées maison, torréfié et cuisiné sur place.',
     heroSubcopy:
       "Du premier café filtre du matin au dernier espresso avant la fermeture, tout ce qui se trouve sur notre comptoir est fait à la main, à quelques pas d'où vous vous trouvez.",
-    story: {
-      heading: 'Torréfié dans le quartier, pour le quartier',
-      paragraphs: [
-        "Café Bistro a ouvert ses portes avec une seule machine à espresso et quatre tabourets, tenu par deux amis qui ne trouvaient nulle part en ville un café qui goûtait comme celui de leur enfance.",
-        'Dix ans plus tard, nous torréfions encore chaque grain et cuisons chaque croissant à la vue du comptoir où nous le servons — nous avons juste plus de tabourets maintenant.',
-      ],
-    },
-    values: [
-      {
-        title: 'Approvisionnement éthique',
-        description:
-          'Nos grains verts sont achetés en commerce direct auprès de producteurs que nous connaissons par leur nom, à des prix qui leur permettent de continuer à cultiver la saison suivante.',
-      },
-      {
-        title: 'Torréfié en petits lots',
-        description:
-          'Nous torréfions par petits lots, assez petits pour être dégustés constamment, afin que chaque sac corresponde à la tasse qui nous a fait tomber en amour.',
-      },
-      {
-        title: 'Fait maison chaque jour',
-        description:
-          'Les pâtisseries et bouchées sont préparées fraîches chaque matin dans notre cuisine — rien de congelé livré par camion, rien qui traîne pendant des jours.',
-      },
-      {
-        title: "La communauté avant tout",
-        description:
-          "Nous tenons un babillard communautaire, un pot d'entraide, et gardons les lumières allumées tard pour quiconque a besoin d'une table chaleureuse et du Wi-Fi.",
-      },
-    ],
   },
   quotes: [
-    { text: 'Le café est un langage en soi.', author: 'Jackie Chan' },
+    { text: "Le café n'est pas seulement une boisson, c'est un langage en soi.", author: 'AI' },
     {
-      text: "Il n'existe pas de petite tasse de café, seulement peu de temps pour la boire.",
+      text: "Il n'existe pas de petit café. Seulement peu de temps pour le boire.",
       author: 'Café Bistro',
     },
-    { text: 'La vie arrive, le café aide.', author: 'Anonyme' },
-    { text: 'Un bâillement est un cri silencieux pour du café.', author: 'Anonyme' },
-    { text: "Mais d'abord, le café.", author: 'Anonyme' },
-    { text: 'Le café, c\'est un câlin dans une tasse.', author: 'Anonyme' },
+    { text: 'La vie est compliquée. Le café est simple.', author: 'AI' },
+    { text: "Arrêtez de hurler intérieurement. Venez plutôt prendre un café.", author: 'AI' },
+    { text: "D'abord et avant tout : le café.", author: 'AI' },
+    { text: 'Les matins comme celui-ci, le café est moins une boisson qu\'un câlin dans une tasse.', author: 'AI' },
   ],
   coffeeCategories: {
     Hot: 'Chaud',
@@ -97,51 +62,57 @@ export const fr = {
     nitro: { title: "Cold brew à l'azote", ingredients: ['Café', "Bulles d'azote", 'Sucre', 'Crème'] },
     mazagran: { title: 'Mazagran', ingredients: ['Café', 'Sucre', 'Citron', 'Rhum'] },
   } as Record<string, { title: string; ingredients: string[] }>,
-  recipeCategories: {
-    Dessert: 'Dessert',
-    Breakfast: 'Petit-déjeuner',
-    Starter: 'Entrée',
-  } as Record<string, string>,
-  recipeArea: 'Cuisine du bistro',
   pages: {
     home: {
       heroEyebrow: 'Bienvenue chez',
       coffeeEyebrow: 'À notre comptoir',
       coffeeTitle: 'Du café, fait comme il faut',
       coffeeSubtitle: 'Une sélection rotative de boissons chaudes et glacées, préparées à la commande.',
-      valuesEyebrow: 'Pourquoi ça goûte différent',
-      valuesTitle: 'Ce que nous défendons',
-      kitchenEyebrow: 'De notre cuisine',
-      kitchenTitle: 'Des bouchées fraîches, faites maison',
-      kitchenSubtitle: 'Un aperçu de ce qui sort du four cette semaine.',
     },
     menu: {
       drinksEyebrow: 'Boissons',
-      drinksTitle: 'Le bar à café',
+      drinksTitle: 'Café',
       filterAll: 'Tout',
     },
-    recipes: {
-      heroEyebrow: 'De notre cuisine',
-      heroTitle: 'Des recettes à essayer chez vous',
-      heroSubtitle: 'Quelques-unes de nos bouchées préférées, si vous préférez les préparer dans votre propre cuisine.',
-      categoryHeading: {
-        Dessert: 'Nos desserts préférés',
-        Breakfast: 'Nos petits-déjeuners préférés',
-        Starter: 'Nos entrées préférées',
-      } as Record<string, string>,
-    },
-    recipeDetail: {
-      notFoundTitle: 'Recette introuvable',
-      notFoundBody: "Nous n'avons pas trouvé cette recette. Elle a peut-être été déplacée.",
-      ingredients: 'Ingrédients',
-      method: 'Préparation',
-    },
     about: {
-      heroEyebrow: 'Notre histoire',
-      heroTitle: 'À propos de Café Bistro',
-      heroSubtitle: 'Deux amis, une machine à espresso, et un quartier qui a grandi avec nous.',
-      storyImageAlt: "L'intérieur de Café Bistro",
-      storyEyebrow: 'Depuis le premier jour',
+      heroEyebrow: 'Une tradition mondiale',
+      heroTitle: "L'histoire du café",
+      heroSubtitle:
+        "De la découverte d'un berger en Éthiopie à l'espresso que vous tenez aujourd'hui — l'histoire de la conquête du monde par le café.",
+      historyEyebrow: 'Du grain à la tasse',
+      historyTitle: 'Une brève histoire du café',
+      history: [
+        {
+          era: 'IXe siècle',
+          title: 'La légende de Kaldi',
+          description:
+            "Selon la légende, un berger de chèvres éthiopien nommé Kaldi remarqua que ses chèvres dansaient d'énergie après avoir grignoté les baies rouge vif d'un certain arbuste. La nouvelle de ce fruit énergisant se répandit jusque dans les monastères voisins, et l'histoire du café commença.",
+        },
+        {
+          era: 'XVe siècle',
+          title: 'Le café atteint l\'Arabie',
+          description:
+            "Dès les années 1400, le café était cultivé et échangé à travers le Yémen. Les moines soufis le préparaient pour rester éveillés durant de longues nuits de prière, et la boisson tira son nom du mot arabe qahwa.",
+        },
+        {
+          era: 'XVIIe siècle',
+          title: "Les cafés conquièrent l'Europe",
+          description:
+            "Le café traversa la Méditerranée jusqu'à Venise, puis Vienne, Londres et Paris. Les cafés devinrent des lieux de rassemblement pour marchands, écrivains et révolutionnaires — le tout premier réseau social.",
+        },
+        {
+          era: 'Début du XXe siècle',
+          title: "L'essor de l'espresso",
+          description:
+            "Des inventeurs italiens exploitèrent la pression de la vapeur pour préparer le café en quelques secondes plutôt qu'en minutes, donnant naissance à l'espresso — et, plus tard, à toute la culture des cafés qui l'entoure.",
+        },
+        {
+          era: "Aujourd'hui",
+          title: 'Un rituel sans frontières',
+          description:
+            "Des torréfacteurs artisanaux aux comptoirs de quartier comme le nôtre, le café demeure l'un des rares rituels partagés, sous une forme ou une autre, par presque toutes les cultures du monde.",
+        },
+      ],
     },
     contact: {
       sendNoteEyebrow: 'Envoyez-nous un mot',

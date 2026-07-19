@@ -74,23 +74,41 @@ const TITLE_TO_CATALOG_KEY: Record<string, string> = {
   mazagran: 'mazagran',
 }
 
-const FALLBACK_KEYS: { key: string; category: 'Hot' | 'Iced' }[] = [
-  { key: 'latte', category: 'Hot' },
-  { key: 'cappuccino', category: 'Hot' },
-  { key: 'americano', category: 'Hot' },
-  { key: 'icedCoffee', category: 'Iced' },
-  { key: 'coldBrew', category: 'Iced' },
-  { key: 'icedLatte', category: 'Iced' },
-]
+// The drink's own nature decides Hot vs Iced — not which endpoint the
+// upstream API happened to list it under. That API mislabels several drinks
+// (e.g. "islatte mocha" is returned from the /coffee/hot endpoint).
+const CATALOG_KEY_CATEGORY: Record<string, 'Hot' | 'Iced'> = {
+  latte: 'Hot',
+  americano: 'Hot',
+  caramelLatte: 'Hot',
+  macchiato: 'Hot',
+  cappuccino: 'Hot',
+  matchaLatte: 'Hot',
+  icedLatte: 'Iced',
+  icedMocha: 'Iced',
+  frappeCaramel: 'Iced',
+  frappeMocha: 'Iced',
+  affogato: 'Hot',
+  flatWhite: 'Hot',
+  caramelMacchiato: 'Hot',
+  icedCoffee: 'Iced',
+  icedEspresso: 'Iced',
+  coldBrew: 'Iced',
+  frappuccino: 'Iced',
+  nitro: 'Iced',
+  mazagran: 'Iced',
+}
 
-const FALLBACK_COFFEE: CoffeeItem[] = FALLBACK_KEYS.map(({ key, category }) => ({
+const FALLBACK_KEYS = ['latte', 'cappuccino', 'americano', 'icedCoffee', 'coldBrew', 'icedLatte']
+
+const FALLBACK_COFFEE: CoffeeItem[] = FALLBACK_KEYS.map((key) => ({
   id: `fallback-${key}`,
   catalogKey: key,
   image: CATALOG_IMAGES[key],
-  category,
+  category: CATALOG_KEY_CATEGORY[key],
 }))
 
-async function fetchCategory(url: string, category: 'Hot' | 'Iced'): Promise<CoffeeItem[]> {
+async function fetchList(url: string, idPrefix: string): Promise<CoffeeItem[]> {
   const res = await fetch(url)
   if (!res.ok) throw new Error(`Coffee API responded ${res.status}`)
   const raw: RawCoffee[] = await res.json()
@@ -100,10 +118,10 @@ async function fetchCategory(url: string, category: 'Hot' | 'Iced'): Promise<Cof
     const catalogKey = TITLE_TO_CATALOG_KEY[item.title.trim().toLowerCase()]
     if (!catalogKey) continue
     items.push({
-      id: `${category.toLowerCase()}-${item.id}`,
+      id: `${idPrefix}-${item.id}`,
       catalogKey,
       image: CATALOG_IMAGES[catalogKey],
-      category,
+      category: CATALOG_KEY_CATEGORY[catalogKey],
     })
   }
   return items
@@ -112,8 +130,8 @@ async function fetchCategory(url: string, category: 'Hot' | 'Iced'): Promise<Cof
 export async function getCoffeeMenu(): Promise<CoffeeItem[]> {
   try {
     const [hot, iced] = await Promise.all([
-      fetchCategory(HOT_URL, 'Hot'),
-      fetchCategory(ICED_URL, 'Iced'),
+      fetchList(HOT_URL, 'hot'),
+      fetchList(ICED_URL, 'iced'),
     ])
     const combined = [...hot, ...iced]
     return combined.length ? combined : FALLBACK_COFFEE

@@ -4,13 +4,3 @@ export interface CoffeeItem {
   image: string
   category: 'Hot' | 'Iced'
 }
-
-export interface RecipeItem {
-  id: string
-  title: string
-  image: string
-  area: string
-  category: string
-  instructions?: string
-  ingredients?: string[]
-}

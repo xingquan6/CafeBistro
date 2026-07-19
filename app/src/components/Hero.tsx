@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 interface HeroProps {
-  image: string
+  image?: string
   eyebrow?: string
   title: string
   subtitle?: string
@@ -10,14 +10,16 @@ interface HeroProps {
 }
 
 export function Hero({ image, eyebrow, title, subtitle, children, height = 'full' }: HeroProps) {
-  const heightClass = height === 'full' ? 'min-h-[85vh]' : 'min-h-[50vh]'
+  // Without a background photo there's nothing that needs filling the
+  // viewport — just size to the content plus its own padding below.
+  const heightClass = !image ? '' : height === 'full' ? 'min-h-[85vh]' : 'min-h-[50vh]'
 
   return (
     <section
-      className={`relative flex ${heightClass} items-center bg-cover bg-center`}
-      style={{ backgroundImage: `url(${image})` }}
+      className={`relative flex ${heightClass} items-center ${image ? 'bg-cover bg-center' : 'bg-espresso'}`}
+      style={image ? { backgroundImage: `url(${image})` } : undefined}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/50 to-espresso/10" />
+      {image && <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/50 to-espresso/10" />}
       <div className="relative mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-xl text-cream">
           {eyebrow && (

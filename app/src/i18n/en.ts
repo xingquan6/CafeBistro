@@ -1,12 +1,11 @@
 export const en = {
   meta: {
-    title: 'Café Bistro | Small-Batch Coffee & Bistro Fare',
-    description: 'Café Bistro — small-batch roasted coffee and scratch-made bites, brewed and baked daily.',
+    title: 'Café Bistro',
+    description: 'Café Bistro',
   },
   nav: {
     home: 'Home',
-    menu: 'Menu',
-    recipes: 'Recipes',
+    menu: 'Drinks',
     about: 'About',
     contact: 'Contact',
     toggleMenu: 'Toggle menu',
@@ -18,57 +17,23 @@ export const en = {
     rights: (year: number, name: string) => `© ${year} ${name}. All rights reserved.`,
   },
   buttons: {
-    viewMenu: 'View Menu',
-    seeFullMenu: 'See Full Menu',
-    seeAllRecipes: 'See All Recipes',
-    backToRecipes: '← Back to Recipes',
-    backToRecipesPlain: 'Back to Recipes',
+    seeFullMenu: 'See All Drinks',
     sendMessage: 'Send Message',
   },
   business: {
-    tagline: 'Small-batch coffee & scratch-made bites, roasted and baked right here.',
     heroSubcopy:
-      "From the first pour-over of the morning to the last espresso before close, everything on our counter is made by hand, a few steps from where you're standing.",
-    story: {
-      heading: 'Roasted in the neighbourhood, for the neighbourhood',
-      paragraphs: [
-        "Café Bistro opened as a single espresso machine and four stools, run by two friends who couldn't find a coffee in the city that tasted like the ones they grew up on.",
-        'A decade later, we still roast every bean and bake every croissant within sight of the counter where we serve it — we just have more stools now.',
-      ],
-    },
-    values: [
-      {
-        title: 'Ethically Sourced',
-        description:
-          'Our green beans are bought direct-trade from growers we know by name, at prices that keep them farming next season too.',
-      },
-      {
-        title: 'Small-Batch Roasted',
-        description:
-          'We roast in batches small enough to taste-test constantly, so every bag matches the cup that made us fall in love with it.',
-      },
-      {
-        title: 'Scratch-Made Daily',
-        description:
-          'Pastries and bites are made fresh each morning in our kitchen — nothing trucked in frozen, nothing sitting for days.',
-      },
-      {
-        title: 'Community First',
-        description:
-          'We keep a community board, a pay-it-forward jar, and the lights on late for anyone who needs a warm table and Wi-Fi.',
-      },
-    ],
+      "Coffee is so much more than a morning routine—it is a craftsmanship, a comfort, and a universal language shared across the world. From the slow, meticulous art of a morning pour-over to the rich intensity of a perfectly pulled espresso, every cup tells a story of dedicated growers, careful roasting, and precise brewing. It is a daily anchor that invites us to slow down, catch our breath, and connect with the people around us. Ultimately, coffee is a warm hug in a mug, roasted and brewed to transform an ordinary moment into something truly special.",
   },
   quotes: [
-    { text: 'Coffee is a language in itself.', author: 'Jackie Chan' },
+    { text: 'Coffee is not just a drink—its a language of its own.', author: 'AI' },
     {
-      text: 'There is no such thing as a small cup of coffee, only a small amount of time to drink it.',
+      text: 'Never a small coffee. Only a short moment to drink it.',
       author: 'Café Bistro',
     },
-    { text: 'Life happens, coffee helps.', author: 'Anonymous' },
-    { text: 'A yawn is a silent scream for coffee.', author: 'Anonymous' },
-    { text: 'But first, coffee.', author: 'Anonymous' },
-    { text: 'Coffee is a hug in a mug.', author: 'Anonymous' },
+    { text: 'Life is complicated. Coffee is simple.', author: 'AI' },
+    { text: 'Stop screaming inside. Come grab a coffee.', author: 'AI' },
+    { text: 'First things first: Coffee.', author: 'AI' },
+    { text: 'On mornings like this, coffee is less of a drink and more of a hug in a mug.', author: 'AI' },
   ],
   coffeeCategories: {
     Hot: 'Hot',
@@ -97,51 +62,57 @@ export const en = {
     nitro: { title: 'Nitro Cold Brew', ingredients: ['Coffee', 'Nitrogen bubbles', 'Sugar', 'Cream'] },
     mazagran: { title: 'Mazagran', ingredients: ['Coffee', 'Sugar', 'Lemon', 'Rum'] },
   } as Record<string, { title: string; ingredients: string[] }>,
-  recipeCategories: {
-    Dessert: 'Dessert',
-    Breakfast: 'Breakfast',
-    Starter: 'Starter',
-  } as Record<string, string>,
-  recipeArea: 'Bistro Kitchen',
   pages: {
     home: {
       heroEyebrow: 'Welcome to',
       coffeeEyebrow: 'From Our Counter',
       coffeeTitle: 'Coffee, made properly',
       coffeeSubtitle: 'A rotating line-up of hot and iced drinks, pulled and poured to order.',
-      valuesEyebrow: 'Why It Tastes Different',
-      valuesTitle: 'What we stand behind',
-      kitchenEyebrow: 'From The Kitchen',
-      kitchenTitle: 'Fresh, scratch-made bites',
-      kitchenSubtitle: "A taste of what's coming out of the oven this week.",
     },
     menu: {
       drinksEyebrow: 'Drinks',
-      drinksTitle: 'The Coffee Bar',
+      drinksTitle: 'Coffee',
       filterAll: 'All',
     },
-    recipes: {
-      heroEyebrow: 'From The Kitchen',
-      heroTitle: 'Recipes worth baking at home',
-      heroSubtitle: "A few of our favourite bites, in case you'd rather make them in your own kitchen.",
-      categoryHeading: {
-        Dessert: 'Dessert favourites',
-        Breakfast: 'Breakfast favourites',
-        Starter: 'Starter favourites',
-      } as Record<string, string>,
-    },
-    recipeDetail: {
-      notFoundTitle: 'Recipe not found',
-      notFoundBody: "We couldn't find that recipe. It may have moved.",
-      ingredients: 'Ingredients',
-      method: 'Method',
-    },
     about: {
-      heroEyebrow: 'Our Story',
-      heroTitle: 'About Café Bistro',
-      heroSubtitle: 'Two friends, one espresso machine, and a neighbourhood that grew with us.',
-      storyImageAlt: 'Inside Café Bistro',
-      storyEyebrow: 'Since day one',
+      heroEyebrow: 'A Global Tradition',
+      heroTitle: 'The History of Coffee',
+      heroSubtitle:
+        "From a shepherd's discovery in Ethiopia to the espresso in your hands today — the story of how coffee conquered the world.",
+      historyEyebrow: 'From Bean to Cup',
+      historyTitle: 'A Brief History of Coffee',
+      history: [
+        {
+          era: '9th Century',
+          title: 'The Legend of Kaldi',
+          description:
+            'According to legend, an Ethiopian goat herder named Kaldi noticed his goats dancing with energy after nibbling on the bright red berries of a certain shrub. Word of the energizing fruit spread to nearby monasteries, and coffee\'s story began.',
+        },
+        {
+          era: '15th Century',
+          title: 'Coffee Reaches Arabia',
+          description:
+            'By the 1400s, coffee was being grown and traded across Yemen. Sufi monks brewed it to stay alert through long nights of prayer, and the drink took its name from the Arabic word qahwa.',
+        },
+        {
+          era: '17th Century',
+          title: 'Coffeehouses Conquer Europe',
+          description:
+            'Coffee crossed the Mediterranean into Venice, then Vienna, London, and Paris. Coffeehouses became gathering places for merchants, writers, and revolutionaries — the original social network.',
+        },
+        {
+          era: 'Early 1900s',
+          title: 'The Rise of Espresso',
+          description:
+            'Italian inventors harnessed steam pressure to brew coffee in seconds rather than minutes, giving the world the espresso — and, eventually, the café culture built around it.',
+        },
+        {
+          era: 'Today',
+          title: 'A Ritual Without Borders',
+          description:
+            'From specialty roasters to neighbourhood counters like ours, coffee remains one of the few rituals shared, in some form, by nearly every culture on earth.',
+        },
+      ],
     },
     contact: {
       sendNoteEyebrow: 'Send A Note',
