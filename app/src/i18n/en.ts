@@ -142,8 +142,6 @@ export const en = {
       heroSubtitle: 'Two friends, one espresso machine, and a neighbourhood that grew with us.',
       storyImageAlt: 'Inside Café Bistro',
       storyEyebrow: 'Since day one',
-      valuesEyebrow: 'What Matters To Us',
-      valuesTitle: 'Our values',
     },
     contact: {
       sendNoteEyebrow: 'Send A Note',

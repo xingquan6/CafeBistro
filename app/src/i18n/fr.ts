@@ -142,8 +142,6 @@ export const fr = {
       heroSubtitle: 'Deux amis, une machine à espresso, et un quartier qui a grandi avec nous.',
       storyImageAlt: "L'intérieur de Café Bistro",
       storyEyebrow: 'Depuis le premier jour',
-      valuesEyebrow: 'Ce qui compte pour nous',
-      valuesTitle: 'Nos valeurs',
     },
     contact: {
       sendNoteEyebrow: 'Envoyez-nous un mot',

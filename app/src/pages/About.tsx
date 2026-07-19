@@ -28,20 +28,6 @@ export function About() {
           </div>
         </div>
       </section>
-
-      <section className="bg-cream-dark py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow={t.pages.about.valuesEyebrow} title={t.pages.about.valuesTitle} />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {t.business.values.map((value) => (
-              <div key={value.title} className="rounded-2xl bg-white p-6 shadow-sm">
-                <h3 className="font-display text-lg font-semibold text-espresso">{value.title}</h3>
-                <p className="mt-3 text-sm text-espresso-light">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   )
 }
